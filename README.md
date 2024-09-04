@@ -18,3 +18,7 @@ Some of the cool features applied in this project:
 
 # App Screens
 ![Picsart_24-09-05_02-35-06-538 1](https://github.com/user-attachments/assets/4125af30-1421-424c-91f0-25848baf2d84)
+
+# App Video
+https://github.com/user-attachments/assets/8b710bb3-581b-4ba7-acc7-d376367dc39b
+
