@@ -1,16 +1,17 @@
 # news_app
 
-A new Flutter project.
+Some of the cool features applied in this project:
 
-## Getting Started
+• Use Bloc as state Management.
 
-This project is a starting point for a Flutter application.
+• MVVM clean architecture.
 
-A few resources to get you started if this is your first Flutter project:
+• Use Firebase as backend(Authentication).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+• Dio Package for API.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+• Use internet_connection_checker package to check internet connection.
+
+• Shared Preferences Package to cash info.
+
+• Hive Package as local storage.
