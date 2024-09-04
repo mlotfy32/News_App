@@ -20,7 +20,10 @@ class News {
     return News(
         author: jsonData['author'] == null ? 'notFound' : jsonData['author'],
         content: jsonData['content'],
-        description: jsonData['description'],
+        description: jsonData['description'] == null ||
+                jsonData['description'] == '[Removed]'
+            ? 'Not Found'
+            : jsonData['description'],
         publishedAt: jsonData['publishedAt'],
         title: jsonData['title'] == null || jsonData['title'] == '[Removed]'
             ? 'Not Found'

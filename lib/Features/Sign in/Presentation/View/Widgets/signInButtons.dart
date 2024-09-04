@@ -2,38 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:news_app/Core/Utiles/AppFontsStyle.dart';
 
 class Signinbuttons extends StatelessWidget {
-  Signinbuttons(
-      {super.key,
-      required this.topDECO,
-      required this.text,
-      required this.onTap});
-  final bool topDECO;
+  Signinbuttons({super.key, required this.text, required this.onTap});
   final String text;
   void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    BoxDecoration topDecoration = BoxDecoration(
-        color: Color(0xff3d3d3d),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(60), topRight: Radius.circular(60)));
-    BoxDecoration bottomDecoration = BoxDecoration(
-        color: Color(0xff3d3d3d),
-        borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(60), bottomRight: Radius.circular(60)));
     return InkWell(
       onTap: onTap,
       child: Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(top: 20, bottom: 10),
           child: Center(
             child: Text(
               text,
-              style: AppfontStyle.introTitleStyle
-                  .copyWith(color: Color(0xffd1d1d1), fontSize: 20),
+              style: AppfontStyle.introTitleStyle.copyWith(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
             ),
           ),
           width: 170,
-          height: 70,
-          decoration: topDECO == true ? topDecoration : bottomDecoration),
+          height: 50,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(0xffB91638), Color(0xff291530)]),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15))),
     );
   }
 }

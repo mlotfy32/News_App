@@ -15,4 +15,12 @@ abstract class Appassets {
   static const String noInterNet = 'assets/noInternet.json';
   static const String wifi = 'assets/wifi.svg';
   static const String earth = 'assets/planet-earth-svgrepo-com.svg';
+  static const String loading = 'assets/loading.json';
+  static const String faile = 'assets/fail.json';
+  static const String success = 'assets/success.json';
+  static const String camera = 'assets/cameraIcon.svg';
+  static const String gallery = 'assets/galleryIcon.svg';
+  static String profile =
+      'https://cdn-icons-png.flaticon.com/512/149/149071.png';
+  static const String logo = 'assets/logo.png';
 }

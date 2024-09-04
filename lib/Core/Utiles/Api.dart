@@ -14,7 +14,7 @@ class AppServices {
     var D =
         DateTime.now().day != '1' ? DateTime.now().day - 1 : DateTime.now().day;
 
-    String a = 'world&from=$year-$newM-$D&sortBy=publishedAt&apiKey=';
+    String a = '$q world&from=$year-$newM-2&sortBy=publishedAt&apiKey=';
     List<News> newsList = [];
     var response = await _dio.get('$_baseUrl$a$_apiKey');
     var data = response.data;

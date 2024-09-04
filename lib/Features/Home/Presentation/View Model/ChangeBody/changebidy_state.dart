@@ -7,6 +7,6 @@ class ChangebidyInitial extends ChangebidyState {}
 
 class Changebody extends ChangebidyState {
   final int Index;
-
-  Changebody({required this.Index});
+  final String dataType;
+  Changebody(this.dataType, {required this.Index});
 }

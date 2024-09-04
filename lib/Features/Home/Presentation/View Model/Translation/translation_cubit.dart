@@ -9,12 +9,15 @@ part 'translation_state.dart';
 class TranslationCubit extends Cubit<TranslationState> {
   TranslationCubit() : super(TranslationInitial());
   translate(text, int index) async {
-    String x = await helper().Translate(text: '$text');
-    log('cubit text = $x');
-    emit(Translation(
-      index,
-      true,
-      text: '$x',
-    ));
+    try {
+      String x = await helper.Translate(text: '$text');
+      emit(Translation(
+        index,
+        true,
+        text: '$x',
+      ));
+    } catch (e) {
+      // helper
+    }
   }
 }

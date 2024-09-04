@@ -12,7 +12,7 @@ class Custometapbar extends StatelessWidget {
   Widget build(BuildContext context) {
     int CurrentIndex = 0;
     return SizedBox(
-      width: helper().getwidth(0.7, context),
+      width: helper.getwidth(0.7, context),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: Appstrings.TabBarTitle.asMap().entries.map((e) {

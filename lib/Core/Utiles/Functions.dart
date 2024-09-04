@@ -16,78 +16,79 @@ import 'package:news_app/Core/Utiles/AppStrings.dart';
 import 'package:translator/translator.dart';
 
 class helper {
-  double getscreenHeight(BuildContext context) {
+  static double getscreenHeight(BuildContext context) {
     double height = MediaQuery.sizeOf(context).height;
     return height;
   }
 
-  double getscreenWidth(BuildContext context) {
+  static double getscreenWidth(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
     return width;
   }
 
-  double getHeight(double Heigth, BuildContext context) {
+  static double getHeight(double Heigth, BuildContext context) {
     double height = MediaQuery.sizeOf(context).height * Heigth;
     return height;
   }
 
-  double getwidth(double Width, BuildContext context) {
+  static double getwidth(double Width, BuildContext context) {
     double width = MediaQuery.sizeOf(context).width * Width;
     return width;
   }
 
-  Translate({required String text}) async {
-    log('text = $text');
+  static Translate({required String text}) async {
     var translator = await GoogleTranslator();
     var translation = await translator.translate(text, to: 'ar');
 
     return await translation.text;
   }
-  // static void loading() {
-  //   Get.defaultDialog(
-  //       radius: 10,
-  //       titlePadding: EdgeInsets.all(20),
-  //       backgroundColor: AppColors.primaryColor,
-  //       title: AppStrings.loading,
-  //       titleStyle: Fontstylesmanager.textDialogStyle,
-  //       content: Material(
-  //         color: Colors.transparent,
-  //         child: Center(
-  //           child: LoadingAnimationWidget.inkDrop(
-  //             color: AppColors.buttonColor,
-  //             size: 70,
-  //           ),
-  //         ),
-  //       ));
-  // }
 
-  // static void success(String title) {
-  //   Get.defaultDialog(
-  //       radius: 10,
-  //       titlePadding: EdgeInsets.all(20),
-  //       backgroundColor: AppColors.primaryColor,
-  //       title: title,
-  //       titleStyle: Fontstylesmanager.textDialogStyle,
-  //       content: Material(
-  //         color: Colors.transparent,
-  //         child: Center(
-  //             child: Lottie.asset(Appassets.success, width: 150, height: 150)),
-  //       ));
-  // }
+  static void loading() {
+    Get.defaultDialog(
+        radius: 10,
+        titlePadding: EdgeInsets.all(20),
+        backgroundColor: Colors.blueGrey[900],
+        title: Appstrings.loading,
+        titleStyle: AppfontStyle.introTitleStyle
+            .copyWith(color: Colors.white, fontSize: 20),
+        content: Material(
+          color: Colors.transparent,
+          child: Center(
+            child: LoadingAnimationWidget.staggeredDotsWave(
+              color: Color(0xffB91638),
+              size: 70,
+            ),
+          ),
+        ));
+  }
 
-  // static void fail(String title) {
-  //   Get.defaultDialog(
-  //       radius: 10,
-  //       titlePadding: EdgeInsets.all(20),
-  //       backgroundColor: AppColors.primaryColor,
-  //       title: title,
-  //       titleStyle: Fontstylesmanager.textDialogStyle,
-  //       content: Material(
-  //         color: Colors.transparent,
-  //         child: Center(
-  //             child: Lottie.asset(Appassets.fail, width: 150, height: 150)),
-  //       ));
-  // }
+  static void success(String title) {
+    Get.defaultDialog(
+        radius: 10,
+        titlePadding: EdgeInsets.all(20),
+        backgroundColor: Colors.blueGrey[900],
+        title: title,
+        titleStyle: AppfontStyle.introTitleStyle.copyWith(color: Colors.white),
+        content: Material(
+          color: Colors.transparent,
+          child: Center(
+              child: Lottie.asset(Appassets.success, width: 120, height: 120)),
+        ));
+  }
+
+  static void fail(String title) {
+    Get.defaultDialog(
+        radius: 10,
+        titlePadding: EdgeInsets.all(20),
+        backgroundColor: Colors.blueGrey[900],
+        title: title,
+        titleStyle: AppfontStyle.introTitleStyle.copyWith(color: Colors.white),
+        content: Material(
+          color: Colors.transparent,
+          child: Center(
+              child: Lottie.asset(Appassets.faile, width: 150, height: 150)),
+        ));
+  }
 
   // static void snackloading(String title) {
   //   Get.snackbar(

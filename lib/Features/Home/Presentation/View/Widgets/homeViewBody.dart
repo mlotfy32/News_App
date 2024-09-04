@@ -8,7 +8,10 @@ import 'package:news_app/Core/Utiles/AppStrings.dart';
 import 'package:news_app/Core/Utiles/Functions.dart';
 import 'package:news_app/Features/Home/Presentation/View%20Model/ChangeBody/changebidy_cubit.dart';
 import 'package:news_app/Features/Home/Presentation/View%20Model/ChangeStateCubit/changestate_cubit.dart';
+import 'package:news_app/Features/Home/Presentation/View%20Model/GetFavorite/get_favorite_cubit.dart';
 import 'package:news_app/Features/Home/Presentation/View/Widgets/HomeTapContent.dart';
+import 'package:news_app/Features/Saved/Presentation/View/SavedView.dart';
+import 'package:news_app/Features/World/Presentation/View/Widgets/worldViewBody.dart';
 
 class Homeviewbody extends StatelessWidget {
   const Homeviewbody({super.key});
@@ -26,21 +29,24 @@ class Homeviewbody extends StatelessWidget {
           },
           builder: (context, state) {
             if (currentIndex == 2) {
-              return Container();
-            } else if (currentIndex == 1) {
-              return Container();
-            } else {
-              return BlocProvider<ChangebidyCubit>(
-                create: (context) => ChangebidyCubit(),
-                child: HomeTapContent(),
+              return BlocProvider<GetFavoriteCubit>(
+                create: (context) => GetFavoriteCubit(),
+                child: Savedview(
+                  Data: [],
+                  saved: true,
+                ),
               );
+            } else if (currentIndex == 1) {
+              return Worldviewbody();
+            } else {
+              return HomeTapContent();
             }
           },
         ),
       ),
       bottomNavigationBar: Container(
           height: 56,
-          width: helper().getscreenWidth(context),
+          width: helper.getscreenWidth(context),
           color: Colors.white,
           child: Row(
             children: Appassets.BottomNavigation.asMap().entries.map((e) {
@@ -70,7 +76,7 @@ class Homeviewbody extends StatelessWidget {
                               height: 4,
                               width: 60,
                               decoration: BoxDecoration(
-                                  color: Color(0xffFA7D23),
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(10),
                                       topRight: Radius.circular(10))),

@@ -41,6 +41,10 @@ dependencies:
   dio:
   flutter_svg: 
   dartz: 
+  jiffy:
+  image_picker: 
+  cloud_firestore:
+  firebase_storage:
   lottie: 
   hive:
   url_launcher: 
@@ -54,7 +58,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  hive_generator:
+  build_runner:
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/Features/Sign%20in/Presentation/View%20Model/SingInCubit/singin_cubit.dart';
 import 'package:news_app/Features/Sign%20in/Presentation/View/Widgets/SingInViewbody.dart';
 
 class SignInView extends StatelessWidget {
@@ -6,6 +8,11 @@ class SignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingInViewbody();
+    return BlocProvider<SinginCubit>(
+      create: (context) => SinginCubit(),
+      child: SingInViewbody(
+        login: true,
+      ),
+    );
   }
 }
